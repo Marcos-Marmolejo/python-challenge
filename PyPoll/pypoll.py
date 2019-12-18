@@ -7,6 +7,7 @@ first = 0
 second = 0
 third = 0
 four = 0
+
 # Path to collect data from the Resources folder
 bank = os.path.join('pypoll.csv')
 
@@ -35,11 +36,21 @@ print(f"		Khan= {int((first/sum)*100)}% ({first})")
 print(f"		Correy= {int((second/sum)*100)}% ({second})")
 print(f"		Li= {int((third/sum)*100)}% ({third})")
 print(f"		O'Tooley= {int((four/sum)*100)}% ({four})")
+
 if (first>second and first > third and first > four):
 	print("				Winner: Khan")
+	nombrewin= "khan"
 elif (second>first and second > third and second > four):
 	print("				Winner: Correy")
+	nombrewin= "Correy"
 elif (third > first and third > second and third > four):
 	print("				Winner: Li")
+	nombrewin= "Li"
 elif (four > first and four > second and four > third):
 	print("				Winner: O'Tooley")
+	nombrewin= "O'Tooley"
+
+file = open("TheMonarca.txt","w") 
+L = [f"Election Results \n------------------------------ \nTotal Votes: {sum} \nKhan= {int((first/sum)*100)}% ({first})\nCorrey= {int((second/sum)*100)}% ({second})\nLi= {int((third/sum)*100)}% ({third})\nO'Tooley= {int((four/sum)*100)}% ({four})\nWinner: {nombrewin}"]  
+file.writelines(L) 
+file.close()

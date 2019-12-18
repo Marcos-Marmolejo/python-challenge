@@ -38,3 +38,8 @@ print(f"total= {sumto}")
 print(f"avg= {avg}")
 print(f"Greatest Increase in Profits: {nombre} : (${Maximo})")
 print(f"El valor minimo es el numero: {nombre2} : (${Minimo})")   
+
+file = open("TheMonarca.txt","w") 
+L = [f"Financial Analysis \n------------------------------ \nTotal months: {sum} \ntotal= {sumto}\nAverage  Change: ${avg}\nGreatest Increase in Profits: {nombre} (${Maximo})\nGreatest Increase in Profits: {nombre2} (${Minimo})"]  
+file.writelines(L) 
+file.close()
